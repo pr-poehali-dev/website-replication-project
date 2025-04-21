@@ -1,5 +1,5 @@
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ReactNode } from "react";
 
 interface ServiceCardProps {
@@ -10,15 +10,17 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
   return (
-    <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
-      <CardHeader className="pb-2">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mb-4">
-          {icon}
+    <Card className="hover:shadow-lg transition-shadow duration-300">
+      <CardContent className="pt-6">
+        <div className="flex items-start">
+          <div className="mr-4 bg-blue-100 p-3 rounded-full text-blue-600">
+            {icon}
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2 text-blue-900">{title}</h3>
+            <p className="text-gray-600">{description}</p>
+          </div>
         </div>
-        <h3 className="font-bold text-xl text-blue-900">{title}</h3>
-      </CardHeader>
-      <CardContent>
-        <p className="text-gray-600">{description}</p>
       </CardContent>
     </Card>
   );
