@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { PhoneCall, Mail, MapPin, Clock } from "lucide-react";
+import { PhoneCall, MessageCircle, MapPin, Clock } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -22,25 +22,25 @@ const ContactSection = () => {
                     <PhoneCall className="w-6 h-6 text-blue-600 mr-4 mt-1" />
                     <div>
                       <h4 className="font-medium text-lg">Телефон</h4>
-                      <p className="text-lg font-bold text-blue-900">+7 (812) 123-45-67</p>
+                      <p className="text-lg font-bold text-blue-900">8 950 030 88 30</p>
                       <p className="text-gray-600">Ежедневно с 8:00 до 22:00</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <Mail className="w-6 h-6 text-blue-600 mr-4 mt-1" />
+                    <MessageCircle className="w-6 h-6 text-blue-600 mr-4 mt-1" />
                     <div>
-                      <h4 className="font-medium text-lg">Email</h4>
-                      <p className="text-lg font-bold text-blue-900">info@elektrikkolpino.ru</p>
-                      <p className="text-gray-600">Отвечаем в течение 2 часов</p>
+                      <h4 className="font-medium text-lg">Telegram / WhatsApp</h4>
+                      <p className="text-lg font-bold text-blue-900">+7 950 030 88 30</p>
+                      <p className="text-gray-600">Быстрая связь через мессенджеры</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <MapPin className="w-6 h-6 text-blue-600 mr-4 mt-1" />
                     <div>
-                      <h4 className="font-medium text-lg">Адрес</h4>
-                      <p className="text-lg font-bold text-blue-900">г. Колпино</p>
+                      <h4 className="font-medium text-lg">Локация</h4>
+                      <p className="text-lg font-bold text-blue-900">г. Колпино, Колпинский район</p>
                       <p className="text-gray-600">Работаем по всему городу и пригородам</p>
                     </div>
                   </div>
@@ -83,6 +83,20 @@ const ContactSection = () => {
                 </form>
               </CardContent>
             </Card>
+          </div>
+        </div>
+        
+        {/* Интерактивная карта */}
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold mb-6 text-blue-900 text-center">Мы на карте</h3>
+          <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
+            <iframe 
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A3ded3a4a0a7df46ae45f5a36c0f1c10a1612a4e1f30bc66a8e0a8b03cecc1d24&amp;source=constructor&amp;scroll=false&amp;ll=30.598970%2C59.748494&amp;z=15&amp;center=30.598970%2C59.748494&amp;pt=30.598970%2C59.748494&amp;mode=search&amp;text=Колпино%2C%20бульвар%20Трудящихся%2012"
+              width="100%" 
+              height="100%" 
+              frameBorder="0"
+              title="Карта Колпино, бульвар Трудящихся 12"
+            ></iframe>
           </div>
         </div>
       </div>

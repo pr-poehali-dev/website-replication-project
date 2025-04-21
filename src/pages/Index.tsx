@@ -6,7 +6,7 @@ import FeatureCard from "@/components/FeatureCard";
 import ContactSection from "@/components/ContactSection";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { PhoneCall, Zap, Shield, Clock, CheckCircle2 } from "lucide-react";
+import { PhoneCall, MessageCircle, Zap, Shield, Clock, CheckCircle2 } from "lucide-react";
 
 const Index = () => {
   return (
@@ -22,28 +22,30 @@ const Index = () => {
               <p className="text-xl mb-6">Профессиональные электромонтажные работы любой сложности с гарантией качества</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900">
-                  <PhoneCall className="mr-2 h-5 w-5" /> Позвонить
+                  <PhoneCall className="mr-2 h-5 w-5" /> 8 950 030 88 30
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-800">
-                  Узнать стоимость
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
+                  <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
                 </Button>
               </div>
             </div>
             <div className="md:w-1/2 flex justify-center">
-              <img 
-                src="/placeholder.svg" 
-                alt="Электрик за работой" 
-                className="rounded-lg shadow-lg max-w-full h-auto"
-                width={500}
-                height={350}
-              />
+              <div className="rounded-lg shadow-lg overflow-hidden w-full max-w-lg h-80">
+                <iframe 
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A3ded3a4a0a7df46ae45f5a36c0f1c10a1612a4e1f30bc66a8e0a8b03cecc1d24&amp;source=constructor&amp;scroll=false" 
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0"
+                  title="Карта Колпино"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Services Section */}
-      <section className="py-16 bg-white">
+      <section id="services" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">Наши услуги</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -82,7 +84,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-100">
+      <section id="about" className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">Почему выбирают нас</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -106,7 +108,7 @@ const Index = () => {
       </section>
 
       {/* Price Section */}
-      <section className="py-16 bg-white">
+      <section id="prices" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">Цены на услуги</h2>
           <div className="max-w-4xl mx-auto">
@@ -135,9 +137,14 @@ const Index = () => {
               </div>
               <div className="p-6 text-center">
                 <p className="text-gray-600 mb-4">Точная стоимость зависит от сложности работ и используемых материалов.</p>
-                <Button className="bg-blue-600 hover:bg-blue-700">
-                  Получить полный прайс-лист
-                </Button>
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <Button className="bg-blue-600 hover:bg-blue-700">
+                    <PhoneCall className="mr-2 h-5 w-5" /> Позвонить
+                  </Button>
+                  <Button className="bg-green-600 hover:bg-green-700">
+                    <MessageCircle className="mr-2 h-5 w-5" /> Написать в WhatsApp
+                  </Button>
+                </div>
               </div>
             </Card>
           </div>

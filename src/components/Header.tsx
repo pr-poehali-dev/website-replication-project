@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { PhoneCall, Menu, X } from "lucide-react";
+import { PhoneCall, Menu, X, Zap, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 const Header = () => {
@@ -35,12 +35,17 @@ const Header = () => {
 
           <div className="hidden md:flex items-center">
             <div className="mr-4">
-              <p className="text-lg font-bold text-blue-900">+7 (812) 123-45-67</p>
+              <p className="text-lg font-bold text-blue-900">8 950 030 88 30</p>
               <p className="text-sm text-gray-500">Ежедневно с 8:00 до 22:00</p>
             </div>
-            <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <PhoneCall className="mr-2 h-4 w-4" /> Заказать звонок
-            </Button>
+            <div className="flex space-x-2">
+              <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                <PhoneCall className="mr-2 h-4 w-4" /> Позвонить
+              </Button>
+              <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,11 +76,16 @@ const Header = () => {
                 Контакты
               </a>
               <div className="pt-3 border-t">
-                <p className="text-lg font-bold text-blue-900">+7 (812) 123-45-67</p>
+                <p className="text-lg font-bold text-blue-900">8 950 030 88 30</p>
                 <p className="text-sm text-gray-500">Ежедневно с 8:00 до 22:00</p>
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 mt-3 w-full">
-                  <PhoneCall className="mr-2 h-4 w-4" /> Заказать звонок
-                </Button>
+                <div className="flex flex-col space-y-2 mt-3">
+                  <Button size="sm" className="bg-blue-600 hover:bg-blue-700 w-full">
+                    <PhoneCall className="mr-2 h-4 w-4" /> Позвонить
+                  </Button>
+                  <Button size="sm" className="bg-green-600 hover:bg-green-700 w-full">
+                    <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+                  </Button>
+                </div>
               </div>
             </nav>
           </div>
@@ -86,21 +96,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// Добавляем компонент Zap для иконки, чтобы избежать ошибок импорта
-const Zap = (props: any) => (
-  <svg
-    {...props}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-  </svg>
-);
